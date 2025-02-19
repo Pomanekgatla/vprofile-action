@@ -30,9 +30,9 @@ jobs:
               uses: warchant/setup-sonar-scanner@v7
 
             # Run sonar-scanner
-            - name: SonarQube Scan
+            - name: SonarQube Scan with Debug Logging
               run: |
-                sonar-scanner \
+                sonar-scanner -X \
                  -Dsonar.host.url=${{ secrets.SONAR_URL }} \
                  -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
                  -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} \
